@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- site icon -->
+<link rel="stylesheet" href="styling.css">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/nbnpha_logo.png">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <header>
+        <a href="home.html">
+            <img src="assets/nbnpha_logo.png" alt="My Website Logo" id="logo">
+        </a>        
+        <title>nbnpha product database</title>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>nbnpha product database</title> -->
+    <!-- TODO: page styling -->
+    <!-- <style>
+        all in line styling has been removed and placed in the styling.css file
+    </style> -->
+    <!-- Add jQuery (required for DataTables) -->
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Add DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Papa Parse to convert CSV to readable Json -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- custom data table script script -->
+    <script src="data_table_scripts.js"></script>
+</head>
+<body>
+    <main>
+        <h1>NBNPHA</h1>
+            <h2>a resource to help you find the right products, the first time</h2>
+        <h3> please select a retailer</h3>
+        <div id="brand-filters">
+            <label>
+                <input type="checkbox" name="bmr" value="BMR">
+                <img class="brand-logo" img src="assets/bmr_logo.webp" alt="BMR LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="bs" value="Bird Stairs">
+                <img class="brand-logo" img src="assets/bird_stairs_logo.svg" alt="Bird Stairs LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="hd" value="Home Depot">
+                <img class="brand-logo" img src="assets/home_depot_logo.svg" alt="Home Depot LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="hh" value="Home Hardware">
+                <img class="brand-logo" img src="assets/home_hardware_logo.svg" alt="Home Hardware LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="kent" value="Kent Building Supplies">
+                <img class="brand-logo" img src="assets/kent_logo.svg" alt="Kent Building Supplies LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="lowes" value="Lowe's">
+                <img class="brand-logo" img src="assets/lowes_logo.svg" alt="Lowe's LOGO" width="75px">
+            </label>
+            <label>
+                <input type="checkbox" name="rona" value="RONA">
+                <img class="brand-logo" img src="assets/rona_logo.svg" alt="RONA LOGO" width="75px">
+            </label>
+        </div>
+        <h3>select a product type</h3>
+        <!-- add checkboxes for product type -->
+        <div id="product-type-filters">
+            <label><input type="checkbox" value="Toilet"> Toilet</label>
+            <label><input type="checkbox" value="Bathtub Faucet"> Bathtub Faucet</label>
+            <label><input type="checkbox" value="Shower Faucet"> Shower Faucet</label>
+            <label><input type="checkbox" value="Showerhead"> Showerhead</label>
+            <label><input type="checkbox" value="Bathroom Sink Faucet"> Bathroom Sink Faucet</label>
+            <label><input type="checkbox" value="Kitchen Sink Faucet"> Kitchen Sink Faucet</label>
+            <label><input type="checkbox" value="Kitchen Sink"> Kitchen Sink</label>
+            <label><input type="checkbox" value="Washer"> Washer</label>
+            <label><input type="checkbox" value="Dryer"> Dryer</label>
+            <label><input type="checkbox" value="Range"> Range</label>
+            <label><input type="checkbox" value="Dishwasher"> Dishwasher</label>
+            <label><input type="checkbox" value="Refrigerator"> Refrigerator</label>
+        </div>     
+        <div id="certification-filters">
+            <label><input type="checkbox" name="watersense_certified" value="1"> Watersense Certified</label>
+            <label><input type="checkbox" name="energy_star_certified" value="1"> Energy Star Certified</label>
+        </div>
+        <div id="dataTableContainer">
+            <table id="productDataTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Product Type</th>
+                        <th>Brand Name</th>
+                        <th>Product Description</th>
+                        <th>Search Result ID</th>
+                        <th>Watersense Certified</th>
+                        <th>Energy Star Certified</th>
+                        <th>Product URL</th>
+                        <th>Image URL</th>
+                        <th>Product Rating</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>        
+    </main>
+    <footer>
+        &copy; 2023 nbnpha. a.cameron
+    </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Add some basic styling here */
+/*  no prefix == html elements by name
+    . targets class attributes
+    # targets single html elements */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: white;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+#logo {
+    height: auto; /* maintain aspect ratio */
+    margin: 0 auto; /* center the image */
+}
+
+nav {
+    /* background-color: gray;  */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+main {
+    background-color: gray;
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.truncate {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+/* product rating stars */
+.star-rating {
+    font-size: 1.5em;  /* Adjust size as needed */
+    color: goldenrod;  /* Adjust color as needed */
+}
+
+.productDataTable, .dataTable th {
+    font-size: 10px;  /* Adjust the font size as needed */
+    padding: 0px;     /* Adjust padding for better spacing */
+}
+
+.brand-logo {
+    max-width: 75px;
+    max-height: 50px;   /* You can adjust this height based on your need */
+    vertical-align: middle;  /* This helps to align the image vertically with the checkbox and the brand name */
+}
+
+/* Styles for the link container */
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Modified styles for the download links */
+main a.download-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Add some space between the links */
+}
+
+main a.download-link:hover {
+    background-color: #555; 
+}
+nav a:hover {
+    text-decoration: underline;
+}
