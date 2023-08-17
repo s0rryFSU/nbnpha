@@ -4,6 +4,7 @@
   "description": "",
   "main": "data_table_scripts.js",
   "scripts": {
+    "build": "azure",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
