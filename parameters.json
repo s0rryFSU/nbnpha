@@ -24,13 +24,13 @@
             "value": null
         },
         "appLocation": {
-            "value": "/main"
+            "value": "main"
         },
         "apiLocation": {
-            "value": "/main"
+            "value": "main"
         },
         "appArtifactLocation": {
-            "value": "/main"
+            "value": "main"
         },
         "areStaticSitesDistributedBackendsEnabled": {
             "value": false
