@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="styling.css">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/nbnpha_logo.png">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css">
 
     <header>
         <a href="home.html">
@@ -26,14 +27,15 @@
     <!-- Papa Parse to convert CSV to readable Json -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <!-- custom data table script script -->
-    <script src="index.js"></script>
+    <script src="data_table_scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
 </head>
 <body>
     <main>
         <h1>NBNPHA</h1>
             <h2>a resource to help you find the right products, the first time</h2>
         <h3> please select a retailer</h3>
-        <div id="brand-filters">
+        <div id="retailer-filters">
             <label>
                 <input type="checkbox" name="bmr" value="BMR">
                 <img class="brand-logo" img src="assets/bmr_logo.webp" alt="BMR LOGO" width="75px">
@@ -64,25 +66,34 @@
             </label>
         </div>
         <h3>select a product type</h3>
+        
         <!-- add checkboxes for product type -->
         <div id="product-type-filters">
-            <label><input type="checkbox" value="Toilet"> Toilet</label>
-            <label><input type="checkbox" value="Bathtub Faucet"> Bathtub Faucet</label>
-            <label><input type="checkbox" value="Shower Faucet"> Shower Faucet</label>
-            <label><input type="checkbox" value="Showerhead"> Showerhead</label>
-            <label><input type="checkbox" value="Bathroom Sink Faucet"> Bathroom Sink Faucet</label>
-            <label><input type="checkbox" value="Kitchen Sink Faucet"> Kitchen Sink Faucet</label>
-            <label><input type="checkbox" value="Kitchen Sink"> Kitchen Sink</label>
-            <label><input type="checkbox" value="Washer"> Washer</label>
-            <label><input type="checkbox" value="Dryer"> Dryer</label>
-            <label><input type="checkbox" value="Range"> Range</label>
-            <label><input type="checkbox" value="Dishwasher"> Dishwasher</label>
-            <label><input type="checkbox" value="Refrigerator"> Refrigerator</label>
+            <label><input type="checkbox" value="toilet"> Toilet</label>
+            <label><input type="checkbox" value="bathtub faucet"> Bathtub Faucet</label>
+            <label><input type="checkbox" value="shower faucet"> Shower Faucet</label>
+            <label><input type="checkbox" value="showerhead"> Showerhead</label>
+            <label><input type="checkbox" value="bathroom sink faucet"> Bathroom Sink Faucet</label>
+            <label><input type="checkbox" value="kitchen sink faucet"> Kitchen Sink Faucet</label>
+            <label><input type="checkbox" value="kitchen sink"> Kitchen Sink</label>
+            <label><input type="checkbox" value="washer"> Washer</label>
+            <label><input type="checkbox" value="dryer"> Dryer</label>
+            <label><input type="checkbox" value="range"> Range</label>
+            <label><input type="checkbox" value="dishwasher"> Dishwasher</label>
+            <label><input type="checkbox" value="refrigerator"> Refrigerator</label>
         </div>     
         <div id="certification-filters">
             <label><input type="checkbox" name="watersense_certified" value="1"> Watersense Certified</label>
             <label><input type="checkbox" name="energy_star_certified" value="1"> Energy Star Certified</label>
+            <label><input type="checkbox" name="ada_certified" value="1"> ADA Certified</label>
         </div>
+        <!-- add a dropdown for brand -->
+        <h3>select a brand and/or use the search filter</h3>
+        <select id="brandFilter" style="width: 20%;">
+            <option value="">Select a Brand</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        </h3>
         <div id="dataTableContainer">
             <table id="productDataTable" class="display">
                 <thead>
@@ -93,6 +104,7 @@
                         <th>Search Result ID</th>
                         <th>Watersense Certified</th>
                         <th>Energy Star Certified</th>
+                        <th>ADA certified</th>
                         <th>Product URL</th>
                         <th>Image URL</th>
                         <th>Product Rating</th>
@@ -103,7 +115,7 @@
                     <!-- Data will be populated here -->
                 </tbody>
             </table>
-        </div>        
+        </div>
     </main>
     <footer>
         &copy; 2023 nbnpha. a.cameron
